@@ -295,3 +295,5 @@ gradle-app.setting
 .nfs*
 
 # End of https://www.toptal.com/developers/gitignore/api/react,reactnative
+
+.env*

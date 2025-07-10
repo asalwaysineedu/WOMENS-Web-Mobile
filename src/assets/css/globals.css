@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --vh: 100%;
+  --gap-5: 5px;
+  --gap-10: 9.9px;
+  --color-font: #000000;
+  --color-gray: #888b8d;
+  --color-gray-light: #f2f2f2;
+  --color-primary: #efdf00;
+  --color-point: #009ad7;
+  --color-line: #d9d9d6;
+  --font-weight-400: 400;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+}
+
+@theme {
+  --color-font: var(--color-font);
+  --color-gray: var(--color-gray);
+  --color-gray-light: var(--color-gray-light);
+  --color-primary: var(--color-primary);
+  --color-point: var(--color-point);
+  --font-weight-400: var(--font-weight-400);
+  --font-weight-600: var(--font-weight-600);
+  --font-weight-700: var(--font-weight-700);
+  --font-weight-800: var(--font-weight-800);
+}
+
+@font-face {
+  font-family: SpoqaHanSansNeo-Bold;
+  src: url('../fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: SpoqaHanSansNeo-Medium;
+  src: url('../fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: SpoqaHanSansNeo-Regular;
+  src: url('../fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: SpoqaHanSansNeo-Light;
+  src: url('../fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: SpoqaHanSansNeo-Thin;
+  src: url('../fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+}
+
+/* html,
+body {
+  background: #fff;
+  color: var(--color-font);
+  margin: 0;
+  padding: 0;
+  font-family: SpoqaHanSansNeo-Regular;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-400);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  height: 100vh;
+  height: var(--vh);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
+} */
+
+/* reset.css */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
