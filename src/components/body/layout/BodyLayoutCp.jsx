@@ -3,7 +3,7 @@ import React from 'react';
 const BodyLayoutCp = ({
   children,
   useHeader = false,
-  useBottomNavigationBar = true,
+  useBottomNavigationBar = false,
   backgroundColor = 'bg-[#FFFFFF]',
 }) => {
   // 예시로 헤더 높이 56px, 바텀바 높이 56px 고정 가정
