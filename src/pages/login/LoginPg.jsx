@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
-
 import LayoutCp from 'components/LayoutCp';
 import LoginPageHeaderCp from 'components/header/LoginPageHeaderCp';
 import OAuthLoginButtonCp from 'components/custom/button/OAuthLoginButtonCp';
-
-import { today } from 'utils/date/moment';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const LoginPg = () => {
-  const _thisYear = today()?.split('-')?.[0];
+  const [index, setIndex] = useState(0);
   const _startText = [
     '내 리듬🎵을 기억하고 싶다면,',
     '내 몸이 하는 말을 듣고👂 싶다면,',
     '내 고민을 공유💬하고 싶다면,',
   ];
-  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -60,7 +56,10 @@ const LoginPg = () => {
 
         {/* 저작권 문구 */}
         <div className="text-center">
-          <p className="text-[12px] text-gray-400">Copyright © {_thisYear} All Rights Reserved.</p>
+          <p className="text-[12px] text-gray-400">
+            첫 로그인 시 <button className="text-[#62D0FF] underline">이용약관</button> 및{' '}
+            <button className="text-[#62D0FF] underline">개인정보 처리방침</button>에 동의한 것으로 간주해요.
+          </p>
         </div>
       </div>
     </LayoutCp>
