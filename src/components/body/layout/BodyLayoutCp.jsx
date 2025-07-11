@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { ScrollContext } from 'components/header/layout/HeaderLayoutCp';
 
 const BodyLayoutCp = ({
   children,
@@ -7,8 +8,9 @@ const BodyLayoutCp = ({
   backgroundColor = 'bg-[#FFFFFF]',
 }) => {
   // 예시로 헤더 높이 56px, 바텀바 높이 56px 고정 가정
-  const HEADER_HEIGHT = useHeader ? 48 : '1rem';
-  const BOTTOM_NAV_HEIGHT = useBottomNavigationBar ? 48 : 0;
+  const scrollRef = useRef();
+  const HEADER_HEIGHT = useHeader ? 56 : '1rem';
+  const BOTTOM_NAV_HEIGHT = useBottomNavigationBar ? 56 : '1rem';
   const LAYOUT_HEIGHT = useHeader
     ? `calc(100vh - ${HEADER_HEIGHT}px - ${BOTTOM_NAV_HEIGHT}px)`
     : `calc(100vh- ${BOTTOM_NAV_HEIGHT}px)`;
@@ -17,22 +19,26 @@ const BodyLayoutCp = ({
 
   return (
     <>
-      <div className={_layout_style}>
-        {/* 헤더는 position: fixed 또는 absolute로 빼도 되고, 이렇게 해도 됨 */}
-        {/* children 영역: 화면 높이에서 header+bottom 네비 높이 뺀 영역 */}
-        <div
-          style={{
-            height: LAYOUT_HEIGHT,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            paddingLeft: '1rem',
-            paddingRight: '1rem',
-          }}
-        >
-          {children}
+      <ScrollContext.Provider value={scrollRef}>
+        <div ref={scrollRef} className={_layout_style}>
+          <div
+            className="scroll-hide"
+            style={{
+              height: LAYOUT_HEIGHT,
+              display: 'flex',
+              overflowY: 'auto',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              paddingTop: HEADER_HEIGHT,
+              paddingBottom: BOTTOM_NAV_HEIGHT,
+              paddingLeft: '0.5rem',
+              paddingRight: '0.5rem',
+            }}
+          >
+            {children}
+          </div>
         </div>
-      </div>
+      </ScrollContext.Provider>
     </>
   );
 };

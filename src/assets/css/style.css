@@ -1,0 +1,11 @@
+.scroll {
+  overflow-y: scroll;
+}
+.scroll-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+/* tailwind global.css 등에 추가 */
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}
